@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dicionário de Dados - Barbearia MF</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button id="btnMenu" class="btn btn-ghost menu-toggle" aria-label="Abrir menu de tabelas">Menu</button>
+  <div class="brand">
+    <span class="brand-title">Dicionário de Dados - Sistema Integrado de Gestão e Agendamento</span>
+    <span class="brand-sub">Barbearia MF</span>
+  </div>
+  <button id="btnTheme" class="btn btn-ghost" aria-label="Alternar tema claro e escuro">Modo escuro</button>
+</header>
+
+<div class="layout">
+  <aside id="sidebar" class="sidebar" aria-label="Navegação por tabelas">
+    <h2 class="side-title">Tabelas (<span id="countTabelas">0</span>)</h2>
+    <nav id="navTabelas"></nav>
+  </aside>
+
+  <main class="main">
+    <section id="identificacao" class="card">
+      <h1>Identificação do Projeto</h1>
+      <p><strong>Escopo:</strong> A Barbearia MF atua em serviços de barbearia e cuidados masculinos, em uma única unidade, e atende mediante agendamento prévio registrado pela equipe. O sistema centraliza clientes e dependentes, barbeiros, serviços, produtos e insumos, e permite registrar, consultar, remarcar, cancelar e concluir agendamentos, registrar pagamentos por atendimento, controlar movimentações e estoque mínimo, gerenciar acessos por perfil e manter a trilha de auditoria. Não contempla gestão financeira, cobrança online, documentos fiscais, autoagendamento nem integração com WhatsApp.</p>
+      <p><strong>Tecnologia:</strong> MySQL (8.4 LTS, InnoDB).</p>
+      <p><strong>Orientador:</strong> Prof. Dr. Diego Carvalho - Universidade Cidade de São Paulo, Modelagem de Banco de Dados.</p>
+      <h3>Responsáveis (Data Owners e Data Stewards)</h3>
+      <div class="table-wrap">
+        <table class="resp">
+          <thead><tr><th>Integrante</th><th>Responsabilidade</th></tr></thead>
+          <tbody>
+            <tr><td>Albert dos Santos Mariano</td><td>Data Steward - Requisitos funcionais, não funcionais e regras de negócio</td></tr>
+            <tr><td>Alessandra Guimarães da Silva</td><td>Data Steward - Qualidade Técnica e Dicionário; líder do grupo</td></tr>
+            <tr><td>Alison Belen Condori Mayta</td><td>Data Steward - Entidades de dados e restrições de integridade</td></tr>
+            <tr><td>Davi Pereira de Oliveira Silva</td><td>Data Steward - Requisitos funcionais, não funcionais e regras de negócio</td></tr>
+            <tr><td>Ellen Cristina Soares de Jesus</td><td>Data Steward - Introdução, escopo e revisão</td></tr>
+            <tr><td>Giovana Moura Alves da Silva</td><td>Data Steward - Requisitos funcionais, não funcionais e regras de negócio</td></tr>
+            <tr><td>João Pedro Theodoro de Sousa Andrade</td><td>Data Owner - Representante do cliente (Barbearia MF); introdução e escopo</td></tr>
+            <tr><td>Petterson Michel Lima Aguilar</td><td>Data Steward - Entidades de dados e restrições de integridade</td></tr>
+            <tr><td>Samuel Carmoni de Oliveira</td><td>Data Steward - Entidades de dados e restrições de integridade</td></tr>
+            <tr><td>Samuel Guimarães da Silva</td><td>Data Steward - Analista de requisitos e de negócio</td></tr>
+          </tbody>
+        </table>
+      </div>
+    
+    </section>
+
+    <section class="card controls" aria-label="Painel de controle">
+      <div class="actions">
+        <a class="btn btn-primary" href="docs/Especificacao_Requisitos_Regras_Negocio_BD.pdf" download>Baixar Especificação de Requisitos (PDF)</a>
+        <button id="btnDer" class="btn btn-primary">Abrir DER</button>
+      </div>
+      <input id="busca" type="search" placeholder="Pesquisar por tabela ou coluna..." aria-label="Pesquisar no dicionário" autocomplete="off">
+      <div class="legend">
+        <span class="badge badge-dps">DPS</span> Dado Pessoal Sensível (nenhum atributo identificado)
+        <span class="badge badge-dp">DP</span> Dado Pessoal
+        <span class="badge badge-na">N/A</span> Não aplicável
+      </div>
+    </section>
+
+    <div id="semResultado" class="card" hidden>Nenhuma tabela ou coluna corresponde à pesquisa.</div>
+    <div id="dicionario"></div>
+
+    <footer class="footer">Barbearia MF - Grupo 7 - Especificação v1.2 - Dicionário de Dados</footer>
+  </main>
+</div>
+
+<div id="modalDer" class="modal" hidden role="dialog" aria-modal="true" aria-label="Diagrama Entidade-Relacionamento">
+  <div class="modal-bar">
+    <button id="zIn" class="btn btn-primary" aria-label="Aumentar zoom">Zoom +</button>
+    <button id="zOut" class="btn btn-primary" aria-label="Diminuir zoom">Zoom -</button>
+    <button id="zReset" class="btn btn-primary" aria-label="Restaurar visualização">Reset</button>
+    <button id="mClose" class="btn btn-ghost" aria-label="Fechar">Fechar</button>
+  </div>
+  <div id="derArea" class="der-area">
+    <img id="derImg" src="assets/der.png" alt="Diagrama Entidade-Relacionamento da Barbearia MF" draggable="false">
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
