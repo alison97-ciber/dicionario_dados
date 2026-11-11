@@ -2,7 +2,7 @@
 
 Dicionário de Dados interativo do **Sistema Integrado de Gestão e Agendamento** da Barbearia MF, elaborado com foco em governança de dados (DAMA-DMBOK e COBIT). Projeto da disciplina de Modelagem de Banco de Dados, curso de Análise e Desenvolvimento de Sistemas, Universidade Cidade de São Paulo.
 
-**Acesse online:** `https://SEU_USUARIO.github.io/NOME_DO_REPOSITORIO/` (substitua pelos dados do seu repositório).
+**Acesse online:https://alison97-ciber.github.io/dicionario_dados/ 
 
 ## Sobre o projeto
 
